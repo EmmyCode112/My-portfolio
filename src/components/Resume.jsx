@@ -68,11 +68,11 @@ const Resume = () => {
         </motion.a>
       </motion.div>
 
-      <div className="gap-y-6 space-x-12 flex items-start">
+      <div className="gap-y-6 md:gap-x-12 flex items-start flex-col md:flex-row">
         {resume.experience.map((item, index) => (
           <div
             key={index}
-            className="bg-gray-800/90 backdrop-blur-sm p-6 rounded-xl border border-white/10 shadow-sm "
+            className="bg-gray-800/90 backdrop-blur-sm p-6 rounded-xl border border-white/10 shadow-sm  "
           >
             <h4 className="text-xl font-semibold text-white mb-1">
               {item.title}

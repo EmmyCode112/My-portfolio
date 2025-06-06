@@ -15,7 +15,7 @@ const Footer = () => {
       {/* Social Media Icons */}
       <div className="flex gap-6 text-xl">
         <a
-          href="https://facebook.com"
+          href="https://web.facebook.com/emmanuel.obot.7406/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-blue-500"
@@ -31,7 +31,7 @@ const Footer = () => {
           <FaTwitter />
         </a>
         <a
-          href="https://instagram.com"
+          href="https://www.instagram.com/emmaoboteh/"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-pink-500"
