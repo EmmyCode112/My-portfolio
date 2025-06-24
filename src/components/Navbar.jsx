@@ -7,11 +7,18 @@ const Navbar = () => {
 
   const navItems = ["Home", "About", "Skills", "Resume", "Projects", "Contact"];
 
+  // Scroll handler
   useEffect(() => {
-    const sections = navItems.map((item) =>
-      document.getElementById(item.toLowerCase())
-    );
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
+  // Intersection Observer to track visible section
+  useEffect(() => {
+    const sectionIds = navItems.map((item) => item.toLowerCase());
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -20,32 +27,25 @@ const Navbar = () => {
           }
         });
       },
-      {
-        root: null,
-        rootMargin: "0px",
-        threshold: 0.5,
-      }
+      { threshold: 0.3, rootMargin: "-100px 0px -100px 0px" }
     );
 
-    sections.forEach((section) => {
+    sectionIds.forEach((id) => {
+      const section = document.getElementById(id);
       if (section) observer.observe(section);
     });
 
     return () => {
-      sections.forEach((section) => {
+      sectionIds.forEach((id) => {
+        const section = document.getElementById(id);
         if (section) observer.unobserve(section);
       });
     };
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  const handleNavLinkClick = () => {
+    setIsOpen(false);
+  };
 
   return (
     <nav
@@ -56,7 +56,7 @@ const Navbar = () => {
       }`}
     >
       <div className="flex justify-between items-center">
-        <a href="/" className="text-2xl font-bold text-white">
+        <a href="#home" className="text-2xl font-bold text-white">
           EmmyCode
         </a>
 
@@ -122,7 +122,7 @@ const Navbar = () => {
                     ? "bg-purple-600/20 text-purple-400"
                     : "hover:bg-white/10"
                 }`}
-                onClick={() => setIsOpen(false)}
+                onClick={handleNavLinkClick}
               >
                 {item}
               </a>
@@ -135,4 +135,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-// This code defines a responsive Navbar component using React.

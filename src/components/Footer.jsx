@@ -23,7 +23,7 @@ const Footer = () => {
           <FaFacebook />
         </a>
         <a
-          href="https://twitter.com"
+          href="https://x.com/emmywiser33?s=21"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-blue-400"
@@ -42,7 +42,7 @@ const Footer = () => {
 
       {/* Copyright */}
       <p className="text-sm text-gray-400">
-        &copy; {year} MyPortfolio. All rights reserved.
+        &copy; {year} MyPortfolio. Crafted with 🤍 by EmmyCode.
       </p>
     </footer>
   );

@@ -32,6 +32,9 @@ const Projects = () => {
         {projects.map((project) => (
           <div
             key={project.id}
+            data-aos="fade-up"
+            data-aos-delay={project.id * 100}
+            data-aos-duration="1000"
             className="w-full sm:w-[46%] md:w-[300px]  border border-white/10 rounded-lg overflow-hidden shadow-md "
           >
             <div className="relative group h-[200px] overflow-hidden">
