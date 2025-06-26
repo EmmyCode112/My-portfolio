@@ -56,7 +56,7 @@ const Navbar = () => {
       }`}
     >
       <div className="flex justify-between items-center">
-        <a href="#home" className="text-2xl font-bold text-white">
+        <a href="/" className="text-2xl font-bold text-white">
           EmmyCode
         </a>
 
