@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Typed from "typed.js";
 import { motion } from "framer-motion";
-import myPic from "/myPic.png";
+import myPic from "/myProfile.jpg";
 import { FaArrowCircleRight } from "react-icons/fa";
 
 const Hero = () => {
